@@ -10,7 +10,7 @@ Upon loading of the program, the user will be prompted to choose between 3 scree
     |-|-|
     |id|unique identifier 4 Alphanumeric characters<br>e.g. `"45AL"`|
     |title|3-100 characters<br>e.g. `"Morbius: The Awakening"`|
-    |duration|of the movie|
+    |duration|of the movie, must be atleast `1h30m`|
     |minimumAge|age rating. if it's R18 (or `18`),<br> customers below the age of 18 cannot make a reservation|
 - Search film/s by Title AND <br>show their status if they are `Showing` or not
 
