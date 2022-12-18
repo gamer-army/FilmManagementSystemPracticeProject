@@ -17,5 +17,6 @@ public class Film
         Duration = duration > new TimeSpan(1,30,0) ? duration :
             throw new ArgumentException($"{nameof(duration)} should be more than 1h30m", nameof(duration));
         
+        MinimumAge = minimumAge;
     }
 }
