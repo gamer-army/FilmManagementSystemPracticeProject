@@ -1,12 +1,5 @@
 # Movie Reservation System <sub><sup>practice project</sup></sub>
 
-### Concepts Applied
-- Object Oriented Programming
-- Unit Testing
-- Model View Presenter <sub><sup>Optional</sup></sub>
-- Repository Pattern <sub><sup>Optional</sup></sub>
-- Dependency Injection <sub><sup>Optional</sup></sub>
-
 Create a system for adding film screening times and reservations.
 Just use CLI. For simplicity sake, let's ignore deletion, schedule conflicts of screening, etc.  
 
@@ -52,11 +45,16 @@ Upon loading of the program, the user will be prompted to choose between 3 scree
     |lastName|3-100 Alpha-only characters|
     |dateOfBirth||
     |Age|must be **derived** from `dateOfBirth`|
+    
 - search reservation
     - by Name (not exact match)
     - by Reservation ID
 
 
-
-
-
+### Concepts Applied
+- Object Oriented Programming
+- Unit Testing
+- Subject Under Test Factory Pattern <sub><sup>Optional</sup></sub> 
+- Model View Presenter <sub><sup>Optional</sup></sub>
+- Repository Pattern <sub><sup>Optional</sup></sub>
+- Dependency Injection <sub><sup>Optional</sup></sub>
