@@ -25,7 +25,7 @@ public class FilmTests
         public void ShouldAcceptValidID(string ID)
         {
             Action act = () => new Film(ID, "Valid Title", new TimeSpan(1,30,0), 0);
-            var error = Record.Exception(() => act.Invoke());
+            var error = Record.Exception(act);
             Assert.Null(error);
         }
     }
@@ -50,7 +50,7 @@ public class FilmTests
         public void ShouldAcceptValidTitle(string title)
         {
             Action act = () => new Film("45AA", title, new TimeSpan(1,30,0), 0);
-            var error = Record.Exception(() => act.Invoke());
+            var error = Record.Exception(act);
             Assert.Null(error);
         }
     }
@@ -69,6 +69,18 @@ public class FilmTests
             Action act = () => new Film("45AA", "Normal Title", duration, 0);
             var error = Assert.Throws<ArgumentException>(act);
             Assert.Equal(InvalidDurationMessage, error.Message);
+        }
+
+        [Theory]
+        [InlineData(0,1,30,0)]
+        [InlineData(0,1,45,0)]
+        [InlineData(0,3,20,0)]
+        public void ShouldAcceptValidDuration(int days, int hours, int minutes, int seconds)
+        {
+            var duration = new TimeSpan(days, hours, minutes, seconds);
+            Action act = () => new Film("45AA", "Normal Title", duration, 0);
+            var error = Record.Exception(act);
+            Assert.Null(error);
         }
     }
 }
