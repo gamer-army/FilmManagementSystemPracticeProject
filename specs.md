@@ -53,8 +53,8 @@ Upon loading of the program, the user will be prompted to choose between 3 scree
 
 ### Concepts Applied
 - Object Oriented Programming
-- Unit Testing
-- Subject Under Test Factory Pattern <sub><sup>Optional</sup></sub> 
 - Model View Presenter <sub><sup>Optional</sup></sub>
 - Repository Pattern <sub><sup>Optional</sup></sub>
 - Dependency Injection <sub><sup>Optional</sup></sub>
+- Unit Testing
+- Subject Under Test <sub><sup>Optional</sup></sub>
