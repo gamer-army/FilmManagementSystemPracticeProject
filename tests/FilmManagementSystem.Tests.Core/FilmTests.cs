@@ -54,4 +54,21 @@ public class FilmTests
             Assert.Null(error);
         }
     }
+
+    public class FilmDuration
+    {
+        const string InvalidDurationMessage = "duration should be between 1h30m-3h30m (Parameter 'duration')";
+
+        [Theory]
+        [InlineData(0,1,20,0)]
+        [InlineData(0,1,29,1)]
+        [InlineData(0,3,31,1)]
+        public void ShouldThrowExceptionWithInvalidDuration(int days, int hours, int minutes, int seconds)
+        {
+            var duration = new TimeSpan(days, hours, minutes, seconds);
+            Action act = () => new Film("45AA", "Normal Title", duration, 0);
+            var error = Assert.Throws<ArgumentException>(act);
+            Assert.Equal(InvalidDurationMessage, error.Message);
+        }
+    }
 }
