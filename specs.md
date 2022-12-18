@@ -36,7 +36,7 @@ Upon loading of the program, the user will be prompted to choose between 3 scree
     |-|-|
     |Screening|-|
     |Customer|-|
-    |id|consist of `Screening id` and some <br>other random number (you decide)|
+    |id|consist of `Screening id` and Customers `FullName` all caps no space in between the first and last|
 
     ### **`Customer`**
     |Properties|Description|
