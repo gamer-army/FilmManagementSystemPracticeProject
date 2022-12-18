@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Tests.Core;
+namespace FilmManagementSystem.Tests.Core.Unit;
 
 public class ReservationTest
 {
