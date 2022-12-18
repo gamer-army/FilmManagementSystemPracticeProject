@@ -4,11 +4,11 @@ public class Film
     public string ID {get; init;}
     public string Title {get; init;}
     public TimeSpan Duration {get; init;}
-    public byte MinimumAge {get; init;}
+    public byte AgeRating {get; init;}
 
     public Film(string id, string title, TimeSpan duration, byte minimumAge)
     {
-        ID = id.Length == 4 && id.IsAlphanumeric() ? id : 
+        ID = id.Length == 4 && id.IsAlphanumeric() ? id.ToUpper() : 
             throw new ArgumentException($"{nameof(id)} should be alphanumeric of 4 chars",nameof(id));
 
         Title = (title.Length > 2 && title.Length < 101) ? title :
@@ -18,6 +18,6 @@ public class Film
             ? duration :
             throw new ArgumentException($"{nameof(duration)} should be between 1h30m-3h30m", nameof(duration));
         
-        MinimumAge = minimumAge;
+        AgeRating = minimumAge;
     }
 }
