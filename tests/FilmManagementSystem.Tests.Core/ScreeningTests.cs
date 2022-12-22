@@ -12,8 +12,6 @@ public class ScreeningTests
         var screening = new Screening(film, CinemaCode.C1, TimeOnly.Parse(ScreeningStarTime),20);
         var expectedEndTime = TimeOnly.Parse(expectedScreeningEndTime);
 
-        Assert.Equal(expectedEndTime, screening.EndTime);
+        screening.EndTime.Should().Be(expectedEndTime);
     }
-    
-
 }

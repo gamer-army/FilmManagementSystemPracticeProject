@@ -14,8 +14,8 @@ public class FilmTests
         {
             Action act = () => new Film(ID, "Valid Title", new TimeSpan(1,30,0), 0);
 
-            var error = Assert.Throws<ArgumentException>(act);
-            Assert.Equal(InvalidIDMessage, error.Message);
+            act.Should().Throw<ArgumentException>()
+                        .WithMessage(InvalidIDMessage);
         }
 
         [Theory]
@@ -25,8 +25,7 @@ public class FilmTests
         public void ShouldAcceptValidID(string ID)
         {
             Action act = () => new Film(ID, "Valid Title", new TimeSpan(1,30,0), 0);
-            var error = Record.Exception(act);
-            Assert.Null(error);
+            act.Should().NotThrow();
         }
     }
 
@@ -40,8 +39,8 @@ public class FilmTests
         public void ShouldThrowExceptionForInvalidTitle(string title)
         {
             Action act = () => new Film("45AA", title, new TimeSpan(1,30,0), 0);
-            var error = Assert.Throws<ArgumentException>(act);
-            Assert.Equal(InvalidTitleMessage, error.Message);
+            act.Should().Throw<ArgumentException>()
+                        .WithMessage(InvalidTitleMessage);
         }
         
         [Theory]
@@ -50,8 +49,7 @@ public class FilmTests
         public void ShouldAcceptValidTitle(string title)
         {
             Action act = () => new Film("45AA", title, new TimeSpan(1,30,0), 0);
-            var error = Record.Exception(act);
-            Assert.Null(error);
+            act.Should().NotThrow();
         }
     }
 
@@ -67,8 +65,8 @@ public class FilmTests
         {
             var duration = new TimeSpan(days, hours, minutes, seconds);
             Action act = () => new Film("45AA", "Normal Title", duration, 0);
-            var error = Assert.Throws<ArgumentException>(act);
-            Assert.Equal(InvalidDurationMessage, error.Message);
+            act.Should().Throw<ArgumentException>()
+                        .WithMessage(InvalidDurationMessage);
         }
 
         [Theory]
@@ -79,8 +77,7 @@ public class FilmTests
         {
             var duration = new TimeSpan(days, hours, minutes, seconds);
             Action act = () => new Film("45AA", "Normal Title", duration, 0);
-            var error = Record.Exception(act);
-            Assert.Null(error);
+            act.Should().NotThrow();
         }
     }
 }

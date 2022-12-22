@@ -13,12 +13,11 @@ public class ReservationTest
         var screening = new Screening(film, CinemaCode.C6, new TimeOnly(10,45), 69);
         var customer = new Customer("Milo","Morbius", SixYrsAgo);
 
-        Action act = () => new Reservation(screening, customer);
+        var expectedErrorMsg = "Customer 'Milo Morbius' is not old enough to view 'Morbius: Have Sex' Age Rating:18";
 
-        var error = Assert.Throws<ArgumentException>(act);
-        Assert.Equal(
-            "Customer 'Milo Morbius' is not old enough to view 'Morbius: Have Sex' Age Rating:18", 
-            error.Message);
+        Action act = () => new Reservation(screening, customer);
+        act.Should().Throw<ArgumentException>()
+                    .WithMessage(expectedErrorMsg);
     }
 
     [Fact]
@@ -29,8 +28,7 @@ public class ReservationTest
         var customer = new Customer("Milo","Morbius", new DateOnly(1998,10,20));
 
         Action act = () => new Reservation(screening, customer);
-
-        var error = Record.Exception(act);
-        Assert.Null(error);
+        
+        act.Should().NotThrow();
     }
 }

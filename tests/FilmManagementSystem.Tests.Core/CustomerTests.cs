@@ -9,8 +9,7 @@ public class CustomerTests
     {
         var DateOfBirth = new DateOnly(year, month, day);
         Action act = () => new Customer("Bobby", "McDimsdale", DateOfBirth);
-        
-        var error = Record.Exception(act);
-        Assert.Null(error);
+
+        act.Should().NotThrow("DateOfBirth is Past Dated");
     }
 }
