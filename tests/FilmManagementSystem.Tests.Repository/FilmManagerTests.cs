@@ -15,7 +15,7 @@ public class FilmManagerTests
         
         var searchNazi = filmSUT.SearchFilmByTitle("nazi");
         Assert.Equal(2, searchNazi.Count());
-        Assert.True(searchNazi.Any(film => film.ID == "AAAA"));
+        searchNazi.Should().Contain(film => film.ID == "AAAA");
         Assert.True(searchNazi.Any(film => film.ID == "XXXX"));
     }   
 }

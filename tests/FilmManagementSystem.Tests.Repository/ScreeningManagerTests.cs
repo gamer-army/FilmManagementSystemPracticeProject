@@ -19,6 +19,7 @@ public class ScreeningManagerTests
             .Build();
 
         var morbiusFilms = sm.SearchByFilmTitle("morbius");
-        Assert.Equal(3, morbiusFilms.Count());
+        morbiusFilms.Count().Should().Be(3);
+        morbiusFilms.Should().Contain(screening => screening.ID == "C1-ABCD-1100");
     }
 }

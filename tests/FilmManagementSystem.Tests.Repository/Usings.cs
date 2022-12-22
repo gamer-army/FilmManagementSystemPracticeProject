@@ -1,3 +1,4 @@
+global using FluentAssertions;
 global using Xunit;
 global using FilmManagementSystem.Repository;
 global using FilmManagementSystem.Repository.Contracts;
