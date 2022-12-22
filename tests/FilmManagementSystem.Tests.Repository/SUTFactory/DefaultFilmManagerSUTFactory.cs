@@ -24,10 +24,7 @@ public class DefaultFilmManagerSUTFactory
     {
         IFilmManager fm = new DefaultFilmManager();
 
-        foreach(var film in _films)
-        {
-            fm.Add(film);
-        }
+        _films.ForEach(_film => fm.Add(_film));
 
         return fm;
     }
