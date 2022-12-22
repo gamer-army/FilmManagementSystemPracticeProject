@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Tests.Core.Unit;
+namespace FilmManagementSystem.Tests.Core;
 
 public class CustomerTests
 {

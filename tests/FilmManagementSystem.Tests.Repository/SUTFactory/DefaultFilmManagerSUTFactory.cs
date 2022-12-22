@@ -1,4 +1,3 @@
-using FilmManagementSystem.Core.Repository;
 namespace FilmManagementSystem.Tests.Core.Repository;
 
 public class DefaultFilmManagerSUTFactory

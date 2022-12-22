@@ -1,10 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit" Version="2.4.2" />
@@ -17,8 +20,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
     <ProjectReference Include="..\..\src\FilmManagementSystem.Repository\FilmManagementSystem.Repository.csproj" />
+    <ProjectReference Include="..\..\src\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
   </ItemGroup>
+
 </Project>

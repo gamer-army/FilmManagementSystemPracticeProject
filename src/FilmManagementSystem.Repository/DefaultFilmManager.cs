@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Core.Repository;
+namespace FilmManagementSystem.Repository;
 
 public class DefaultFilmManager : IFilmManager
 {
