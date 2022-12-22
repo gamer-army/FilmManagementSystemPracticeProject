@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Repository;
+namespace FilmManagementSystem.Repository.Contracts;
 
 public interface IFilmManager
 {
