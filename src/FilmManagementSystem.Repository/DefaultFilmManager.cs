@@ -11,7 +11,7 @@ public class DefaultFilmManager : IFilmManager
 
     public void Add(Film film)
     {
-        if(_films.Any(_films => _films.ID == film.ID))
+        if(Exists(film.ID))
         {
             throw new InvalidOperationException($"Duplicate entry for Film with ID:{film.ID}");
         }
@@ -19,13 +19,17 @@ public class DefaultFilmManager : IFilmManager
         _films.Add(film);
     }
 
+    public Film Get(string filmID)
+        => _films.First(_film => _film.ID == filmID);
+    
+
+    public bool Exists(string filmID)
+        => _films.Any(_film => _film.ID == filmID);
+
     public IEnumerable<Film> SearchFilmByTitle(string title)
-    {
-        return _films.Where(film => film.Title.ToUpper().Contains(title.ToUpper()));
-    }
+        => _films.Where(film => film.Title.ToUpper().Contains(title.ToUpper()));
+    
     
     public IEnumerable<Film> SearchFilmByAgeRating(int age)
-    {
-        return _films.Where(film => film.AgeRating <= age);
-    }
+        => _films.Where(film => film.AgeRating <= age);
 }
