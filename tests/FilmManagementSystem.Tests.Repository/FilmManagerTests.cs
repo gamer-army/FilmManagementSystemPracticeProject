@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Tests.Core.Repository;
+namespace FilmManagementSystem.Tests.Repository;
 
 public class FilmManagerTests
 {
