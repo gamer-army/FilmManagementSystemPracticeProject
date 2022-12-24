@@ -8,7 +8,7 @@ public class Film
 
     public Film(string id, string title, TimeSpan duration, byte minimumAge)
     {
-        ID = id.Length == 4 && id.IsAlphanumeric() ? id.ToUpper() : 
+        ID = id.IsValidFilmID() ? id.ToUpper() : 
             throw new ArgumentException($"{nameof(id)} should be alphanumeric of 4 chars",nameof(id));
 
         Title = (title.Length > 2 && title.Length < 101) ? title :

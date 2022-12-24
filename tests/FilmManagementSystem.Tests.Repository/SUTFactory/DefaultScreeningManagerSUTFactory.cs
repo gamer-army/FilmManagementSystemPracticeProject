@@ -2,7 +2,8 @@ namespace FilmManagementSystem.Tests.Repository;
 
 public class DefaultScreeningManagerSUTFactory
 {
-    public List<Screening> _screenings;
+    private List<Screening> _screenings;
+    private IFilmManager? _filmManager;
 
     public DefaultScreeningManagerSUTFactory()
     {
@@ -20,9 +21,16 @@ public class DefaultScreeningManagerSUTFactory
         return this;
     }
 
+    public DefaultScreeningManagerSUTFactory WithFilmManager(IFilmManager fm)
+    {
+        _filmManager = fm;
+        
+        return this;
+    }
+
     public IScreeningManager Build()
     {
-        IScreeningManager ism = new DefaultScreeningManager();
+        IScreeningManager ism = new DefaultScreeningManager(_filmManager!);
 
         _screenings.ForEach(_screening => ism.Add(_screening));
 

@@ -2,17 +2,20 @@ namespace FilmManagementSystem.Core;
 
 public class Screening
 {
-    public Film Film {get; init;}
+    
+    public string FilmID {get; init;}
     public CinemaCode CinemaCode {get; init;}
     public TimeOnly StartTime {get; init;}
     public uint Price {get; init;}
 
-    public TimeOnly EndTime => StartTime.Add(Film.Duration);
-    public string ID => $"{CinemaCode}-{Film.ID}-{StartTime.Hour.WithPreceeding0s(2)}{StartTime.Minute.WithPreceeding0s(2)}";
+    //public TimeOnly EndTime => StartTime.Add(Film.Duration);
+    public string ID => $"{CinemaCode}-{FilmID}-{StartTime.Hour.WithPreceeding0s(2)}{StartTime.Minute.WithPreceeding0s(2)}";
 
-    public Screening(Film film, CinemaCode cinemaCode, TimeOnly startTime, uint price)
+    public Screening(string filmID, CinemaCode cinemaCode, TimeOnly startTime, uint price)
     {
-        this.Film = film ?? throw new ArgumentNullException(nameof(film));
+        this.FilmID = filmID.IsValidFilmID() ? filmID.ToUpper() : 
+            throw new ArgumentException($"{nameof(filmID)} should be alphanumeric of 4 chars",nameof(filmID));
+        
         this.CinemaCode = cinemaCode;
         this.StartTime = startTime;
         this.Price = price;

@@ -2,20 +2,20 @@ namespace FilmManagementSystem.Core;
 
 public class Reservation
 {
-    public Screening Screening {get; init;}
+    public string ScreeningID {get; init;}
     public Customer Customer {get; init;}
     public string ID => 
-        $"{Screening.ID}-{Customer.FirstName.ToUpper()}{Customer.LastName.ToUpper()}";
+        $"{ScreeningID}-{Customer.FirstName.ToUpper()}{Customer.LastName.ToUpper()}";
 
-    public Reservation(Screening screening, Customer customer)
+    public Reservation(string screeningID, Customer customer)
     {
-        Screening = screening ?? throw new ArgumentNullException(nameof(screening));
+        ScreeningID = screeningID;
         Customer = customer ?? throw new ArgumentNullException(nameof(customer));
 
-        if(customer.Age < Screening.Film.AgeRating)
-        {
-            throw new ArgumentException(
-                $"Customer '{customer.FirstName} {customer.LastName}' is not old enough to view '{Screening.Film.Title}' Age Rating:{Screening.Film.AgeRating}");
-        }
+        // if(customer.Age < Screening.Film.AgeRating)
+        // {
+        //     throw new ArgumentException(
+        //         $"Customer '{customer.FirstName} {customer.LastName}' is not old enough to view '{Screening.Film.Title}' Age Rating:{Screening.Film.AgeRating}");
+        // }
     }
 }
