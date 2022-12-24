@@ -21,10 +21,9 @@ Upon loading of the program, the user will be prompted to choose between 3 scree
     |filmID|The **`Film.ID`** to be shown, must be an existing `Film`|
     |cinemaCode|2-letter alphanumeric code for<br> where (which cinema) is it showing<br>e.g. Cinema1 = `"C1"`|
     |startTime|what time will it start in 24H format<br>e.g. `1345` for 01:45 PM<br><sub><sup>Ignore **schedule conflicts** if it's too hard to manage</sup></sub>|
-    |endTime|what time it will end in 24H format<br>must be **derived** from film `duration` and `startTime`|
     |price|cost|
     |id|unique Screening Identifier code<br>comprises of `cinemaCode`, `filmID` and `showingTime`<br>e.g. `"C1-45AL-1345"`|
-- Search screening/s AND show their details such as which cinema and what time they start&end
+- Search screening/s AND show their details such as which cinema and what time they **start** & **end**
     - search by Film Title (not exact match)<br>if you search for `"Morbius"`, you can get `"Morbius"` and `"Morbius II"`
     - search by Film ID (exact match)
     - search by Showing Time, get the screenings after the input time.<br>if you search for 1:00PM or `1300`, you get to see the screening on or after 1:00PM
