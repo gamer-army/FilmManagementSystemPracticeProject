@@ -5,6 +5,8 @@ public class Customer
     public string FirstName {get; init;}
     public string LastName {get; init;}
     public DateOnly DateOfBirth{get; init;}
+
+    public string FullName => $"{FirstName} {LastName}";
     public int Age {
         get {
             var dob = new DateTime(DateOfBirth.Year, DateOfBirth.Month, DateOfBirth.Day);

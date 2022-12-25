@@ -1,4 +1,4 @@
-namespace FilmManagementSystem.Tests.Repository;
+namespace FilmManagementSystem.Tests.Repository.SUTFactory;
 
 public class DefaultFilmManagerSUTFactory
 {
