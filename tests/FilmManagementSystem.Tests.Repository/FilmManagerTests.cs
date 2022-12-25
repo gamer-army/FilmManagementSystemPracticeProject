@@ -30,8 +30,17 @@ public class FilmManagerTests
     {
         var searchNazi = filmManager.SearchFilmByTitle("nazi");
         
-        searchNazi.Count().Should().Be(2);
+        searchNazi.Should().HaveCount(2);
         searchNazi.Should().Contain(film => film.ID == "AAAA");
         searchNazi.Should().Contain(film => film.ID == "XXXX");
+    }
+
+    [Fact]
+    public void ShouldSearchFilmByAgeRating()
+    {
+        var film12 = filmManager.SearchFilmByAgeRating(12);
+        film12.Should().HaveCount(2);
+        film12.Should().Contain(film => film.ID == "AAAA");
+        film12.Should().Contain(film => film.ID == "XXXX");
     }
 }
