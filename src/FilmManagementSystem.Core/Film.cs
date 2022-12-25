@@ -11,11 +11,10 @@ public class Film
         ID = id.IsValidFilmID() ? id.ToUpper() : 
             throw new ArgumentException($"{nameof(id)} should be alphanumeric of 4 chars",nameof(id));
 
-        Title = (title.Length > 2 && title.Length < 101) ? title :
+        Title = title.Length.IsBetween(2,101) ? title :
             throw new ArgumentException($"{nameof(title)} should be 3-100 characters long", nameof(title));
 
-        Duration = (duration >= new TimeSpan(1,30,0) && duration <= new TimeSpan(3,30,0)) 
-            ? duration :
+        Duration = duration.IsValidFilmDuration() ? duration :
             throw new ArgumentException($"{nameof(duration)} should be between 1h30m-3h30m", nameof(duration));
         
         AgeRating = minimumAge;
