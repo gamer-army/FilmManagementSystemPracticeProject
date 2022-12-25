@@ -29,6 +29,7 @@ public class ScreeningManagerTests
     public void ShouldSearchFilmByTitle()
     {
         var screeningsWithMorbius = screeningManager.SearchByFilmTitle("Morbius");
+        
         screeningsWithMorbius.Should().HaveCount(4);
         screeningsWithMorbius.Should().Contain(screening => screening.FilmID == "AAX1");
         screeningsWithMorbius.Should().Contain(screening => screening.FilmID == "AAX2");
@@ -40,8 +41,21 @@ public class ScreeningManagerTests
     public void ShouldSearchByFilmID()
     {
         var screeningsWithFilmXXXX = screeningManager.SearchByFilmID("XXXX");
+        
         screeningsWithFilmXXXX.Should().HaveCount(2);
         screeningsWithFilmXXXX.Should().Contain(screening => screening.ID == "C4-XXXX-1020");
         screeningsWithFilmXXXX.Should().Contain(screening => screening.ID == "C1-XXXX-1400");
+    }
+
+    [Fact]
+    public void ShouldSearchByShowingTime()
+    {
+        var screenings1130 = screeningManager.SearchByScreeningTime(new TimeOnly(11,30));
+
+        screenings1130.Should().HaveCount(4);
+        screenings1130.Should().Contain(screening => screening.ID == "C1-AAX1-1130");
+        screenings1130.Should().Contain(screening => screening.ID == "C2-AAX1-1145");
+        screenings1130.Should().Contain(screening => screening.ID == "C1-AAX2-1350");
+        screenings1130.Should().Contain(screening => screening.ID == "C1-XXXX-1400");
     }
 }
