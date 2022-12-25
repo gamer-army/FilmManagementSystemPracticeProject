@@ -17,7 +17,7 @@ public class DefaultScreeningManager : IScreeningManager
     {
         if(!_filmManager.Exists(screening.FilmID))
         {
-            throw new ArgumentException($"Film:{nameof(screening.FilmID)} not found");
+            throw new ArgumentException($"Film:{screening.FilmID} not found");
         }
 
         if(Exists(screening.ID))
