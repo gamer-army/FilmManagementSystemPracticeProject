@@ -31,7 +31,8 @@ public class ScreeningManagerTests
         Action act = () => 
             screeningManager.Add(new Screening("ABCD", CinemaCode.C6, new TimeOnly(15,00), 20));
         
-        act.Should().Throw<ArgumentException>().WithMessage("Film:ABCD not found");
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("Film:ABCD not found");
     }
 
     [Fact]
