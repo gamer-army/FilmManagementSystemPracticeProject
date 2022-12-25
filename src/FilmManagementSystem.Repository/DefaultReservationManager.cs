@@ -52,4 +52,7 @@ public class DefaultReservationManager : IReservationManager
     public IEnumerable<Reservation> SearchByName(string name)
         => _reservations.Where(
             _reservation => _reservation.Customer.FullName.ToUpper().Contains(name.ToUpper()));
+    
+    public Reservation? SearchByID(string reservationID)
+        => _reservations.Find(_reservation => _reservation.ID == reservationID);
 }

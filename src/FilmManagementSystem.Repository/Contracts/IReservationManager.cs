@@ -6,4 +6,5 @@ public interface IReservationManager
     Reservation Get(string reservationID);
     bool Exists(string reservationID);
     IEnumerable<Reservation> SearchByName(string name);
+    Reservation? SearchByID(string reservationID);
 }
