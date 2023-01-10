@@ -9,13 +9,11 @@ public class Reservation
 
     public Reservation(string screeningID, Customer customer)
     {
-        ScreeningID = screeningID;
+        ScreeningID = !string.IsNullOrWhiteSpace(screeningID) ? screeningID : throw new ArgumentNullException(nameof(screeningID));
         Customer = customer ?? throw new ArgumentNullException(nameof(customer));
 
-        // if(customer.Age < Screening.Film.AgeRating)
-        // {
-        //     throw new ArgumentException(
-        //         $"Customer '{customer.FirstName} {customer.LastName}' is not old enough to view '{Screening.Film.Title}' Age Rating:{Screening.Film.AgeRating}");
-        // }
+        // I would like to do a validation check here with the Customer.Age and Screening.Film.AgeRating 
+        // but it appears I can't come up with a design unless the constructor's parameters are Object instance
+        // which I don't like.
     }
 }
