@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Core", "src\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj", "{FB0486F6-3A85-4F45-BE75-470A18A1E16A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Core", "src\domain\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj", "{FB0486F6-3A85-4F45-BE75-470A18A1E16A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Tests.Core", "tests\FilmManagementSystem.Tests.Core\FilmManagementSystem.Tests.Core.csproj", "{28891C48-AA14-407F-A1DE-FAC726B20320}"
 EndProject
