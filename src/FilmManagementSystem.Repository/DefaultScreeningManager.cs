@@ -31,17 +31,19 @@ public class DefaultScreeningManager : IScreeningManager
     public bool Exists(string screeningID)
         => _screenings.Any(_screening => _screening.ID == screeningID);
 
-    public Screening Get(string screeningID)
-        => _screenings.First(_screening => _screening.ID == screeningID);
+    public Screening? Get(string screeningID)
+        => _screenings.FirstOrDefault(_screening => _screening.ID == screeningID);
 
     public IEnumerable<Screening> SearchByFilmID(string filmID)
         => _screenings.Where(screening => screening.FilmID == filmID);
 
     public IEnumerable<Screening> SearchByFilmTitle(string filmTitle)
-        =>_screenings.Where(
-             screening => 
-                _filmManager.Get(screening.FilmID).Title.ToUpper()
-                .Contains(filmTitle.ToUpper()));
+    {
+        return _screenings.Where(screening => 
+            _filmManager.Get(screening.FilmID)!.Title.ToUpper()
+            .Contains(filmTitle.ToUpper())
+        );
+    }
 
     public IEnumerable<Screening> SearchByScreeningTime(TimeOnly screeningTime)
         => _screenings.Where(screening => screeningTime <= screening.StartTime);

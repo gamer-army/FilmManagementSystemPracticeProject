@@ -77,4 +77,11 @@ public class ScreeningManagerTests
         screenings1130.Should().Contain(screening => screening.ID == "C1-AAX2-1350");
         screenings1130.Should().Contain(screening => screening.ID == "C1-XXXX-1400");
     }
+
+    [Fact]
+    public void ShouldSearchNonExistentFilmTitle()
+    {
+        var screenings = screeningManager.SearchByFilmTitle("ASDHASFKDSAFNSAFISAFASFS");
+        screenings.Should().HaveCount(0);
+    }
 }

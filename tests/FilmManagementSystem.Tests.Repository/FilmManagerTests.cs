@@ -45,4 +45,11 @@ public class FilmManagerTests
         film12.Should().Contain(film => film.ID == "AAAA");
         film12.Should().Contain(film => film.ID == "XXXX");
     }
+
+    [Fact]
+    public void ShouldTest()
+    {
+        var film = filmManager.Get("AMOG");
+        film.Should().BeNull();
+    }
 }

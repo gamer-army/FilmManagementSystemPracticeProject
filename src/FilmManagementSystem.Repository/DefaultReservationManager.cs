@@ -21,13 +21,8 @@ public class DefaultReservationManager : IReservationManager
 
     public void Add(Reservation reservation)
     {
-        if(!_screeningManager.Exists(reservation.ScreeningID))
-        {
-            throw new ArgumentException($"Screening:{reservation.ScreeningID} not found");
-        }
-
-        var screening = _screeningManager.Get(reservation.ScreeningID);
-        var film = _filmManager.Get(screening.FilmID);
+        var screening = _screeningManager.Get(reservation.ScreeningID) ?? throw new ArgumentException($"Screening:{reservation.ScreeningID} not found");
+        var film = _filmManager.Get(screening.FilmID) ?? throw new ArgumentException($"Film:{screening.FilmID} not found");
 
         if(reservation.Customer.Age < film.AgeRating)
         {
@@ -35,7 +30,7 @@ public class DefaultReservationManager : IReservationManager
                 $"Customer '{reservation.Customer.FullName}' is not old enough to view '{film.Title}' Age Rating:{film.AgeRating}");
         }
 
-        if(_reservations.Any(_reservation => _reservation.ID == reservation.ID))
+        if(Exists(reservation.ID))
         {
             throw new InvalidOperationException($"Duplicate entry Reservation:{reservation.ID}");
         }

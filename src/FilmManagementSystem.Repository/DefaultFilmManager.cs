@@ -19,9 +19,8 @@ public class DefaultFilmManager : IFilmManager
         _films.Add(film);
     }
 
-    public Film Get(string filmID)
-        => _films.First(_film => _film.ID == filmID);
-    
+    public Film? Get(string filmID)
+        => _films.FirstOrDefault(_film => _film.ID == filmID);
 
     public bool Exists(string filmID)
         => _films.Any(_film => _film.ID == filmID);
