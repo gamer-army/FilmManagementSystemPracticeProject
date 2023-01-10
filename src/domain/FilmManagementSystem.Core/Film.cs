@@ -1,14 +1,7 @@
 ﻿namespace FilmManagementSystem.Core;
 
-/// <summary>
-/// abcasdasfasfsafas
-/// </summary> 
 public class Film
 {
-
-    /// <summary>
-    /// ID Summary lasdasdfasfsafasfasfas
-    /// </summary> 
     public string ID {get; init;}
     public string Title {get; init;}
     public TimeSpan Duration {get; init;}
@@ -26,12 +19,5 @@ public class Film
             throw new ArgumentException($"{nameof(duration)} should be between 1h30m-3h30m", nameof(duration));
         
         AgeRating = minimumAge;
-    }
-
-    /// <summary>
-    /// test gago aaaa
-    /// </summary> 
-    public void Testing(){
-
     }
 }
