@@ -19,7 +19,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
-    <ProjectReference Include="..\..\src\FilmManagementSystem.Repository\FilmManagementSystem.Repository.csproj" />
+    <ProjectReference Include="..\..\src\domain\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
+    <ProjectReference Include="..\domain\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
