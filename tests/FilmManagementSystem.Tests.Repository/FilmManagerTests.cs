@@ -13,6 +13,8 @@ public class FilmManagerTests
                 new Film("XXXX", "Minions Nazi Operations 1933-1945", new TimeSpan(1,45,0), 3)
             )
             .Build();
+        
+        
     }
 
     [Fact]

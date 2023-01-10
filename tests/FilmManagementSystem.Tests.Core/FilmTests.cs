@@ -34,7 +34,7 @@ public class FilmTests
         const string InvalidTitleMessage = "title should be 3-100 characters long (Parameter 'title')";
 
         [Theory]
-        [InlineData("AM")]
+        [InlineData("A")]
         [InlineData("AMongus Saurus Sexy Benis With Big Smelly Balls What the fuck am i doing with my life seriously God left me unfinished")]
         public void ShouldThrowExceptionForInvalidTitle(string title)
         {

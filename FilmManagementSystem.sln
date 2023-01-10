@@ -1,11 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Core", "src\FilmManagementSystem.Core\FilmManagementSystem.Core.csproj", "{FB0486F6-3A85-4F45-BE75-470A18A1E16A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Client.Cli", "src\FilmManagementSystem.Client.Cli\FilmManagementSystem.Client.Cli.csproj", "{A9276213-C3B1-4050-8396-AB37E6BCCDB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Tests.Core", "tests\FilmManagementSystem.Tests.Core\FilmManagementSystem.Tests.Core.csproj", "{28891C48-AA14-407F-A1DE-FAC726B20320}"
 EndProject
@@ -13,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{966BCA76-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Repository", "src\FilmManagementSystem.Repository\FilmManagementSystem.Repository.csproj", "{E5D2BAFD-8C63-44B2-A96A-DB7F7F6FFAAF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{6BEBC040-98AF-428F-AA65-ACDA2909E226}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A763C55F-9884-4C07-87BC-D8F91A2BD2EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmManagementSystem.Tests.Repository", "tests\FilmManagementSystem.Tests.Repository\FilmManagementSystem.Tests.Repository.csproj", "{2A9C0584-F405-4029-B890-E5D81930A316}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E6B0DB90-351B-45BA-BF19-C024C1960BC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +30,6 @@ Global
 		{FB0486F6-3A85-4F45-BE75-470A18A1E16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB0486F6-3A85-4F45-BE75-470A18A1E16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB0486F6-3A85-4F45-BE75-470A18A1E16A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9276213-C3B1-4050-8396-AB37E6BCCDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9276213-C3B1-4050-8396-AB37E6BCCDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9276213-C3B1-4050-8396-AB37E6BCCDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9276213-C3B1-4050-8396-AB37E6BCCDB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28891C48-AA14-407F-A1DE-FAC726B20320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28891C48-AA14-407F-A1DE-FAC726B20320}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28891C48-AA14-407F-A1DE-FAC726B20320}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,8 +44,8 @@ Global
 		{2A9C0584-F405-4029-B890-E5D81930A316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{966BCA76-38B3-4AB6-BC2C-331DDE2D69E9} = {E6B0DB90-351B-45BA-BF19-C024C1960BC5}
 		{28891C48-AA14-407F-A1DE-FAC726B20320} = {A763C55F-9884-4C07-87BC-D8F91A2BD2EA}
-		{A9276213-C3B1-4050-8396-AB37E6BCCDB2} = {6BEBC040-98AF-428F-AA65-ACDA2909E226}
 		{FB0486F6-3A85-4F45-BE75-470A18A1E16A} = {966BCA76-38B3-4AB6-BC2C-331DDE2D69E9}
 		{E5D2BAFD-8C63-44B2-A96A-DB7F7F6FFAAF} = {966BCA76-38B3-4AB6-BC2C-331DDE2D69E9}
 		{2A9C0584-F405-4029-B890-E5D81930A316} = {A763C55F-9884-4C07-87BC-D8F91A2BD2EA}
